@@ -1,0 +1,92 @@
+/* 1. VARIABLES - Couleurs Rose & Brun (Charte Graphique) */
+:root {
+    --primary-rose: #fce4ec;    /* Rose pastel */
+    --accent-rose: #ec407a;     /* Rose vif (hover) */
+    --text-brown: #5d4037;      /* Brun foncé (lisibilité) */
+    --title-brown: #8d6e63;     /* Brun moyen */
+    --bg-light: #fff9f9;        /* Fond de page */
+    --card-bg: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+/* 2. BASE - Reset & Style général */
+* { margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif; }
+html { scroll-behavior: smooth; }
+body { background-color: var(--bg-light); 
+    color: var(--text-brown); 
+    line-height: 1.6; }
+
+/* 3. NAVIGATION (Exigence 2.2) */
+header {
+    background: var(--primary-rose);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; top: 0; z-index: 1000;
+    border-bottom: 2px solid #d7ccc8;
+}
+.logo { font-weight: bold; 
+    font-size: 1.5rem; 
+    color: var(--text-brown); }
+.logo span { color: var(--accent-rose); }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; 
+              color: var(--text-brown); 
+              font-weight: 600; 
+              transition: var(--transition); }
+.nav-links a:hover { color: var(--accent-rose); 
+                     border-bottom: 2px solid var(--accent-rose); }
+
+/* 4. SECTIONS & TITRES */
+section { padding: 80px 10%; }
+h2 { text-align: center; 
+     margin-bottom: 40px; 
+     color: var(--title-brown); 
+     position: relative; }
+h2::after { content: ''; 
+            position: absolute; 
+            width: 50px; height: 3px; 
+            background: var(--accent-rose); 
+            bottom: -10px; 
+            left: 50%; 
+            transform: translateX(-50%); }
+
+/* 5. COMPONENTS - Hero, Cards, Skills */
+.hero { 
+    height: 70vh; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--primary-rose), var(--bg-light));
+    animation: fadeIn 1s ease; /* Exigence 2.4 */
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; } }
+
+#propos, .project-card { 
+    background: var(--card-bg); border-radius: 20px; padding: 30px; 
+    border: 1px solid var(--primary-rose); box-shadow: 0 5px 15px rgba(141, 110, 99, 0.05); 
+}
+#propos { max-width: 800px; margin: auto; text-align: center; }
+
+.skill-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.skill-tag { background: #f8bbd0; padding: 8px 20px; border-radius: 50px; transition: var(--transition); cursor: pointer; }
+.skill-tag:hover { background: var(--title-brown); color: #fff; transform: translateY(-3px); }
+
+/* Grille des projets (Exigence 2.3) */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(141, 110, 99, 0.1); }
+
+/* 6. FORMULAIRE ET FOOTER */
+form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 30px auto; }
+input, textarea { padding: 12px; border: 1px solid var(--primary-rose); border-radius: 8px; outline: none; }
+button { background: var(--title-brown); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; transition: var(--transition); }
+button:hover { background: var(--accent-rose); }
+
+footer { background: var(--primary-rose); text-align: center; padding: 30px; margin-top: 50px; }
+.social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 10px; }
+.social-links a { text-decoration: none; color: var(--text-brown); font-weight: bold; 
