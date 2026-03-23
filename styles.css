@@ -20,26 +20,27 @@ body { background-color: var(--bg-light);
     line-height: 1.6; }
 
 /* 3. NAVIGATION (Exigence 2.2) */
-header {
-    background: var(--primary-rose);
-    padding: 15px 5%;
+nav ul, ul {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky; top: 0; z-index: 1000;
-    border-bottom: 2px solid #d7ccc8;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    margin: 0;
+    background-color: #fce4ec;
 }
-.logo { font-weight: bold; 
-    font-size: 1.5rem; 
-    color: var(--text-brown); }
-.logo span { color: var(--accent-rose); }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { text-decoration: none; 
-              color: var(--text-brown); 
-              font-weight: 600; 
-              transition: var(--transition); }
-.nav-links a:hover { color: var(--accent-rose); 
-                     border-bottom: 2px solid var(--accent-rose); }
+
+/* 2. Style the links (Remove blue color and underline) */
+nav a, a {
+    text-decoration: none; /* This removes the underline */
+    color: #5d4037;        /* Professional brown color */
+    font-weight: 600;
+}
+
+/* 3. Hover effect */
+nav a:hover, a:hover {
+    color: #ad1457;
+}
 
 /* 4. SECTIONS & TITRES */
 section { padding: 80px 10%; }
